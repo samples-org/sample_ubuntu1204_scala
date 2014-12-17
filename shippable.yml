@@ -9,6 +9,7 @@ before_script:
 
 build_image: shippableimages/ubuntu1204_scala
 
+
 script:
   - export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:PermSize=256M -XX:MaxPermSize=512M"
   - sbt clean scoverage:test
@@ -16,4 +17,5 @@ script:
 after_script:
   - mkdir -p shippable/codecoverage
   - mv target/scala-2.11/coverage-report/cobertura.xml $PWD/shippable/codecoverage/
+
 archive: true
