@@ -7,6 +7,7 @@ scala:
 before_script:
   - export PATH=$PATH:$SHIPPABLE_REPO_DIR
 
+
 build_image: shippableimages/ubuntu1204_scala
 
 script:
@@ -16,4 +17,5 @@ script:
 after_script:
   - mkdir -p shippable/codecoverage
   - mv target/scala-2.11/coverage-report/cobertura.xml $PWD/shippable/codecoverage/
+
 archive: true
