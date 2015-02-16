@@ -7,7 +7,8 @@ before_script:
   - git --version
   - export PATH=$PATH:$SHIPPABLE_REPO_DIR
 
-build_image: shippableimages/ubuntu1204_scala:0.0.2
+build_image: shippableimages/ubuntu1204_scala
+
 
 script:
   - export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:PermSize=256M -XX:MaxPermSize=512M"
@@ -19,4 +20,4 @@ after_script:
   
 archive: true
 
-commit_container: shipci/sample_ubuntu1204_scala
+#commit_container: shipci/sample_ubuntu1204_scala
