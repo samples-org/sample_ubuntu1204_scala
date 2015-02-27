@@ -2,6 +2,8 @@ language: scala
 
 scala:
   - 2.11.0
+env:
+  - secure: d2jiFzTc+S7Xo+Vc/HYWriaNX0pUBm51drmGV3TWHR6bY4B7BQ0pOl/Jzsq4iaXc/dJ3LfYDiusekYWEdTcwmG2TFbHfNPw0PV9hanWH/B95K7uEWJvwb7Qc70imY950PVOcLKUsWsN6fFrMPxpKjlTB+ykyLQcSoWxQ7qTRqgAdXVM555O2/ZLnQY/HPsNqowYJTt97v0fIn+zyU9hvh4k3RmSoxsWDnGB8ecsvbnSsPQK+nVEod/tzXCsJCMDjX+p7YjZH5bcw7NRlEIUxZwbe/APRK7/lE9ISygi9seYUdu+8zykmcSdVXml9wIQVV1nXe89KWhJ7mgRJc2YqbQ==
 
 before_script:
   - git --version
@@ -15,6 +17,7 @@ script:
   - export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:PermSize=256M -XX:MaxPermSize=512M"
   - sbt clean scoverage:test
   - echo $BUILD_URL
+  - echo $test
 
 after_script:
   - mkdir -p shippable/codecoverage
